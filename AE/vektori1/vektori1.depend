@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1710157550 source:c:\users\korisnik\desktop\ae\vektori1\main.cpp
+	<iostream>
+	<vector>
+

@@ -1,0 +1,55 @@
+"1."
+
+Select sifra_l, dat_vr, cijena from pposcic.let
+where sifra_ko in(select sifra_ko from pposcic.kompanija where naziv_ko='Air Malta')
+and sifra_l in (select sifra_l from pposcic.let where br_put>max(br_put)
+and sifra_ko in(select sifra_ko from pposcic.kompanija where naziv_ko='Croatia Airlines'));
+
+
+"2."
+
+
+select 
+months_between (round(let.dat_vr)), let.sifra_l, 
+let.pol_odr, kompanija.naziv_ko, kompanija.br_avi
+from pposcic.let, pposcic.kompanija;
+
+
+
+
+
+
+
+"3."
+select naziv_ko from pposcic.kompanija
+where 
+
+
+
+
+
+
+
+
+
+
+
+"4."
+
+select let.sifra_l, let.pol_odr, kompanija.naziv_ko, kompanija.br_avi,
+abc.kategorija
+from pposcic.let , pposcic.kompanija , pposcic.abc
+where
+let.sifra_ko=kompanija.sifra_ko
+ and abc.kategorija = between min_a and max_a;
+
+
+
+
+
+"5."
+
+select pol_odr, cijena from pposcic.let
+where sifra_ko in(select sifra_ko from pposcic.kompanija where
+br_zap > 1000 and cijena in(select max(cijena) from pposcic.let where
+sifra_ko in (select sifra_ko from pposcic.kompanija where naziv_ko='Ryanair')));

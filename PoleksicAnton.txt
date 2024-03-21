@@ -1,0 +1,8 @@
+1. select naziv_o, spol, sati from PPOSCIC.OSOBA
+where NAZIV_O like '%ić%';
+2. select naziv_o from PPOSCIC.OSOBA
+where SIFRA_P in{
+    select SIFRA_P
+    from PPOSCIC.OSOBA
+    join PPOSCIC.PROJEKT on PPOSCIC.OSOBA
+}
